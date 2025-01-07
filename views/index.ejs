@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="header">
+    Live Message Board
+  </h1>
+  <div class="add-msg">
+    <a href="/new">Send message</a>
+  </div>
+  <div class="message-board-wrapper">
+    <div class="message-board">
+      <% for (const message of messages) { %>
+        <div> <%= message.text %> </div>
+        <span> <%= message.user %> </span>
+        <button>Open Message</button>
+
+        <a href=<%= `/messages/${message.id}` %>>Open Message</a>
+        <% } %>
+
+    </div>
+  </div>
+</body>
+</html>
